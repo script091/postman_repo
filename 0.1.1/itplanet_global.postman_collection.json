@@ -15,8 +15,7 @@
 						"exec": [
 							"var jsonData = JSON.parse(responseBody);\r",
 							"pm.globals.set(\"email\", jsonData.emailAddress);\r",
-							"pm.globals.set(\"inboxId\", jsonData.id);\r",
-							""
+							"pm.globals.set(\"inboxId\", jsonData.id);"
 						],
 						"type": "text/javascript"
 					}
@@ -53,12 +52,8 @@
 					"listen": "prerequest",
 					"script": {
 						"exec": [
-							"\r",
 							"const d = (Date.now() / 1000) % 100000;\r",
-							"pm.globals.set(\"ctime\", parseInt(d));\r",
-							"\r",
-							"\r",
-							""
+							"pm.globals.set(\"ctime\", parseInt(d));"
 						],
 						"type": "text/javascript"
 					}
