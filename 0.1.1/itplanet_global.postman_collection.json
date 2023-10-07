@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "ca918a19-9335-486b-85ed-e2df04f65dc6",
-		"name": "itplanet_global",
+		"_postman_id": "1e442a64-e180-4d33-a968-eb015f5df9bf",
+		"name": "itplanet",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "18453680"
 	},
@@ -13,9 +13,10 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"var jsonData = JSON.parse(responseBody);",
-							"pm.globals.set(\"email\", jsonData.emailAddress);",
-							"pm.globals.set(\"inboxId\", jsonData.id);"
+							"var jsonData = JSON.parse(responseBody);\r",
+							"pm.environment.set(\"email\", jsonData.emailAddress);\r",
+							"pm.environment.set(\"inboxId\", jsonData.id);\r",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -52,8 +53,12 @@
 					"listen": "prerequest",
 					"script": {
 						"exec": [
-							"const d = (Date.now() / 1000) % 100000;",
-							"pm.globals.set(\"ctime\", parseInt(d));"
+							"\r",
+							"const d = (Date.now() / 1000) % 100000;\r",
+							"pm.environment.set(\"ctime\", parseInt(d));\r",
+							"\r",
+							"\r",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -62,17 +67,17 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Response status code is 200\", function () {",
-							"    pm.response.to.have.status(200);",
-							"});",
-							"",
-							"pm.test(\"Response time is less than 500ms\", function () {",
-							"    pm.expect(pm.response.responseTime).to.be.below(500);",
-							"});",
-							"",
-							"pm.test(\"Response body contains 'registration successful' message\", function () {",
-							"    var responseBody = pm.response.text();",
-							"    pm.expect(pm.response.text()).to.include(\"Реєстрація пройшла успішно\");",
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body contains 'registration successful' message\", function () {\r",
+							"    var responseBody = pm.response.text();\r",
+							"    pm.expect(pm.response.text()).to.include(\"Реєстрація пройшла успішно\");\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -205,8 +210,8 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"var jsonData = JSON.parse(responseBody);",
-							"pm.globals.set(\"email_id\", jsonData.content[0].id);"
+							"var jsonData = JSON.parse(responseBody);\r",
+							"pm.environment.set(\"email_id\", jsonData.content[0].id);"
 						],
 						"type": "text/javascript"
 					}
@@ -249,8 +254,8 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"var jsonData = JSON.parse(responseBody);",
-							"pm.globals.set(\"confirm_link\", jsonData.links[0]);"
+							"var jsonData = JSON.parse(responseBody);\r",
+							"pm.environment.set(\"confirm_link\", jsonData.links[0]);"
 						],
 						"type": "text/javascript"
 					}
@@ -303,17 +308,18 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"// pm.test(\"Response status code is 200\", function () {",
-							"//    pm.response.to.have.status(200);",
-							"// });",
-							"",
-							"pm.test(\"Response time is less than 500ms\", function () {",
-							"    pm.expect(pm.response.responseTime).to.be.below(500);",
-							"});",
-							"",
-							"pm.test(\"Response body contains user's Full Name\", function () {",
-							"    var responseBody = pm.response.text();",
-							"    pm.expect(responseBody).to.include(pm.variables.get(\"fio\"));",
+							"// pm.test(\"Response status code is 200\", function () {\r",
+							"//    pm.response.to.have.status(200);\r",
+							"// });\r",
+							"\r",
+							"pm.test(\"Response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body contains user's Full Name\", function () {\r",
+							"    var responseBody = pm.response.text();\r",
+							"    pm.expect(responseBody).to.include(pm.variables.get(\"fio\"));\r",
+							"    pm.expect(pm.response.text()).to.include(\", ласкаво просимо на наш сайт\");\r",
 							"});"
 						],
 						"type": "text/javascript"
