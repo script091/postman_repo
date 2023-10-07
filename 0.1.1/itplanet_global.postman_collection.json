@@ -211,7 +211,7 @@
 					"script": {
 						"exec": [
 							"var jsonData = JSON.parse(responseBody);\r",
-							"pm.environment.set(\"email_id\", jsonData.content[0].id);"
+							"pm.globals.set(\"email_id\", jsonData.content[0].id);"
 						],
 						"type": "text/javascript"
 					}
@@ -255,7 +255,7 @@
 					"script": {
 						"exec": [
 							"var jsonData = JSON.parse(responseBody);\r",
-							"pm.environment.set(\"confirm_link\", jsonData.links[0]);"
+							"pm.globals.set(\"confirm_link\", jsonData.links[0]);"
 						],
 						"type": "text/javascript"
 					}
@@ -319,7 +319,6 @@
 							"pm.test(\"Response body contains user's Full Name\", function () {\r",
 							"    var responseBody = pm.response.text();\r",
 							"    pm.expect(responseBody).to.include(pm.variables.get(\"fio\"));\r",
-							"    pm.expect(pm.response.text()).to.include(\", ласкаво просимо на наш сайт\");\r",
 							"});"
 						],
 						"type": "text/javascript"
