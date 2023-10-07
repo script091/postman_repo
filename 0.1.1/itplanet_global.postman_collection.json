@@ -13,8 +13,8 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"var jsonData = JSON.parse(responseBody);\r",
-							"pm.globals.set(\"email\", jsonData.emailAddress);\r",
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.globals.set(\"email\", jsonData.emailAddress);",
 							"pm.globals.set(\"inboxId\", jsonData.id);"
 						],
 						"type": "text/javascript"
@@ -52,7 +52,7 @@
 					"listen": "prerequest",
 					"script": {
 						"exec": [
-							"const d = (Date.now() / 1000) % 100000;\r",
+							"const d = (Date.now() / 1000) % 100000;",
 							"pm.globals.set(\"ctime\", parseInt(d));"
 						],
 						"type": "text/javascript"
@@ -62,17 +62,17 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Response status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Response time is less than 500ms\", function () {\r",
-							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Response body contains 'registration successful' message\", function () {\r",
-							"    var responseBody = pm.response.text();\r",
-							"    pm.expect(pm.response.text()).to.include(\"Реєстрація пройшла успішно\");\r",
+							"pm.test(\"Response status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"",
+							"pm.test(\"Response body contains 'registration successful' message\", function () {",
+							"    var responseBody = pm.response.text();",
+							"    pm.expect(pm.response.text()).to.include(\"Реєстрація пройшла успішно\");",
 							"});"
 						],
 						"type": "text/javascript"
@@ -205,7 +205,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"var jsonData = JSON.parse(responseBody);\r",
+							"var jsonData = JSON.parse(responseBody);",
 							"pm.globals.set(\"email_id\", jsonData.content[0].id);"
 						],
 						"type": "text/javascript"
@@ -249,7 +249,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"var jsonData = JSON.parse(responseBody);\r",
+							"var jsonData = JSON.parse(responseBody);",
 							"pm.globals.set(\"confirm_link\", jsonData.links[0]);"
 						],
 						"type": "text/javascript"
@@ -303,17 +303,17 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"// pm.test(\"Response status code is 200\", function () {\r",
-							"//    pm.response.to.have.status(200);\r",
-							"// });\r",
-							"\r",
-							"pm.test(\"Response time is less than 500ms\", function () {\r",
-							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Response body contains user's Full Name\", function () {\r",
-							"    var responseBody = pm.response.text();\r",
-							"    pm.expect(responseBody).to.include(pm.variables.get(\"fio\"));\r",
+							"// pm.test(\"Response status code is 200\", function () {",
+							"//    pm.response.to.have.status(200);",
+							"// });",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"",
+							"pm.test(\"Response body contains user's Full Name\", function () {",
+							"    var responseBody = pm.response.text();",
+							"    pm.expect(responseBody).to.include(pm.variables.get(\"fio\"));",
 							"});"
 						],
 						"type": "text/javascript"
