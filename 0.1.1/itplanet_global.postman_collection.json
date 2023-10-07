@@ -55,7 +55,7 @@
 						"exec": [
 							"\r",
 							"const d = (Date.now() / 1000) % 100000;\r",
-							"pm.environment.set(\"ctime\", parseInt(d));\r",
+							"pm.globals.set(\"ctime\", parseInt(d));\r",
 							"\r",
 							"\r",
 							""
