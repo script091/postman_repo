@@ -211,7 +211,7 @@
 					"script": {
 						"exec": [
 							"var jsonData = JSON.parse(responseBody);\r",
-							"pm.environment.set(\"email_id\", jsonData.content[0].id);"
+							"pm.environment.set(\"email_id\", jsonData.content[0].id);\r"
 						],
 						"type": "text/javascript"
 					}
